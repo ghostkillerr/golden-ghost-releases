@@ -22,11 +22,15 @@ Eksik ZIP, checksum veya manifest içeren bir yayın tamamlanmış kabul edilmez
 
 ## Elle SHA-256 doğrulama
 
-Windows PowerShell ile indirilen paketin özetini görmek için:
+Doğrulayacağınız ZIP dosyası ile ona ait `.sha256` dosyasını aynı Release sayfasındaki **Assets** bölümünden indirin. İki dosyanın aynı sürüme ait olduğundan emin olun.
+
+Windows PowerShell ile indirilen paketin bulunduğu klasörde özetini görmek için:
 
 ```powershell
 Get-FileHash -Algorithm SHA256 .\golden_ghost.zip
 ```
+
+Çıktıdaki `Hash` sütununu `.sha256` dosyasında yazan SHA-256 özetiyle karşılaştırın; varsa dosya adını karşılaştırmaya dahil etmeyin. Büyük ve küçük harf farkı önemli değildir.
 
 Çıktıyı aynı Release altındaki `golden_ghost.zip.sha256` değeriyle karşılaştırın. Ses paketi için aynı işlem `audio_update.zip` ve `audio_update.zip.sha256` ile yapılır.
 
